@@ -19,8 +19,6 @@ var prizeSchema = new mongoose.Schema({
 const Prize = mongoose.model("Prize", prizeSchema);
 
 var contestSchema = new mongoose.Schema({
-    contestId: {
-    },
     startTime: {
         type: Date,
         required: true
@@ -79,7 +77,9 @@ var contestSchema = new mongoose.Schema({
     prizeArray: {
         type: [prizeschema]
     }
-});
+},
+    { timestamps: true }
+);
 
 const Contest = mongoose.model("Contest", contestSchema);
 module.exports = { Prize, Contest }

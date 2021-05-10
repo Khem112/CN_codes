@@ -17,13 +17,15 @@ var cryptoSchema = new mongoose.Schema({
     },
     logo: {
         data: Buffer,
-        contentType: String 
+        contentType: String
     },
     crypto_type: {
         type: Number,
         required: true,
         default: 0
     }
-});
+},
+    { timestamps: true }
+);
 
 module.exports = mongoose.model("Crypto", cryptoSchema);
